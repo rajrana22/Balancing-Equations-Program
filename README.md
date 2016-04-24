@@ -19,6 +19,11 @@ def left_side_elements(elements):
         if equation.index("e") < equation.index("="):
             return(e)
 
+if left_side_elements(elements) == right_side_elements(elements):
+    return equation
+else:
+    balanced = set left_side_elements(elements) == right_side_elements(elements)
+
 final = normal + balanced
 
 print "This is the balanced equation:" + final
