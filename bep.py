@@ -5,6 +5,8 @@ equation = raw_input("Insert an equation:")
 
 split_over_equal = equation.split("=")
 
+print split_over_equal
+
 for side in split_over_equal:
 
     for compound in side.split("+"):
@@ -26,17 +28,21 @@ for side in split_over_equal:
         else:
             print compositionAsDict
 
-left, right = split_over_equal
+for x in str.find(str(compositionAsDict),0,"="):
+    compositionAsDictOnTheLeft = x
 
-if left == right:
+for y in str.find(str(compositionAsDict),"=", len(compositionAsDict)):
+    compositionAsDictOnTheRight = y
 
-    print(equation)
+if compositionAsDictOnTheLeft == compositionAsDictOnTheRight:
 
-elif right > left:
-        left += 1
+    print(userInput)
+
+elif compositionAsDictOnTheRight > compositionAsDictOnTheLeft:
+        compositionAsDictOnTheLeft += 1
 
 else:
-    while left > right:
-        right += 1
+    while compositionAsDictOnTheLeft > compositionAsDictOnTheRight:
+        compositionAsDictOnTheRight += 1
 
-print left + "=" + right
+print compositionAsDictOnTheLeft + "=" + compositionAsDictOnTheRight
